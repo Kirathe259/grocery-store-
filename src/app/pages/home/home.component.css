@@ -1,0 +1,13 @@
+.categories {
+  padding: 2rem;
+  text-align: center;
+}
+.category-list {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.category {
+  width: 200px;
+}

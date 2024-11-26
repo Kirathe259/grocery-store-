@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="categories">
+  <h2>Categories</h2>
+  <div class="category-list">
+    <div class="category" *ngFor="let category of categories">
+      <mat-card>
+        <mat-card-title>{{ category.name }}</mat-card-title>
+        <mat-card-content>{{ category.description }}</mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
