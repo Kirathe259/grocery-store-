@@ -1,0 +1,69 @@
+.login-container {
+  max-width: 350px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #1a4314; /* Dark-green shade */
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #1a4314; /* Dark-green text color */
+}
+
+.form-group {
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a4314; /* Dark-green text */
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: black; /* Ensure text is visible */
+  box-sizing: border-box;
+}
+
+input:focus {
+  border-color: #1a4314; /* Highlight border on focus */
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  color: white;
+  background-color: #1a4314; /* Dark-green background for the button */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #145a10; /* Slightly darker green on hover */
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 10px;
+  color: #1976d2;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+

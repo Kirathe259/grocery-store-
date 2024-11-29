@@ -1,0 +1,36 @@
+<div class="category-container" *ngIf="category">
+  <h2>{{ category | titlecase }} Items</h2>
+
+  <div *ngIf="items.length > 0; else noItems" class="item-list">
+    <div class="item-card" *ngFor="let item of items">
+
+      <!-- Right Section -->
+      <div class="item-image">
+        <img [src]="item.imageUrl" [alt]="item.name" />
+      </div>
+
+      
+      <!-- Left Section -->
+      <div class="item-details">
+        <h3 class="item-name">{{ item.name }}</h3>
+        <p class="item-price">Price: {{ item.price | currency }}</p>
+        <p class="item-stock" [ngClass]="{'in-stock': item.inStock, 'out-of-stock': !item.inStock}">
+          {{ item.inStock ? 'In Stock' : 'Out of Stock' }}
+        </p>
+      </div>
+
+      
+
+      <!-- Quantity Selector -->
+      <div class="quantity-selector">
+        <button (click)="decrementQuantity(item)" [disabled]="item.quantity === 0 || !item.inStock">-</button>
+        <span class="quantity">{{ item.quantity }}</span>
+        <button (click)="incrementQuantity(item)" [disabled]="!item.inStock">+</button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noItems>
+    <p>No items available in this category.</p>
+  </ng-template>
+</div>
