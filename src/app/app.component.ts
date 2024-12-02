@@ -5,6 +5,9 @@ import { CategoryComponent } from './pages/category/category.component';
 
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { OtpVerificationComponent } from './components/otp-verification/otp-verification.component';
+
 
 @Component({
   selector: 'app-root',
@@ -15,6 +18,8 @@ import { LoginComponent } from './components/login/login.component';
     CategoryComponent,
     LoginComponent,
     SignupComponent,
+    ForgotPasswordComponent,
+    OtpVerificationComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

@@ -1,0 +1,23 @@
+<div class="otp-container">
+  <h2>Verify OTP</h2>
+  <p>Please enter the 4-digit OTP sent to your email.</p>
+  <form (ngSubmit)="verifyOtp()">
+    <div class="otp-input-group">
+      <input
+        *ngFor="let value of otp; let i = index"
+        #otpInput
+        type="text"
+        maxlength="1"
+        [(ngModel)]="otp[i]"
+        (input)="handleInput(i, $event)"
+        (keydown)="handleKeyDown(i, $event)"
+        name="otp{{ i }}"
+        required
+        class="otp-box"
+      />
+    </div>
+    <button type="submit">Verify OTP</button>
+  </form>
+  <p *ngIf="resendDisabled">Resend available in {{ countdown }} seconds</p>
+  <button class="resend" *ngIf="!resendDisabled" (click)="resendOtp()">Resend OTP</button>
+</div>

@@ -26,9 +26,13 @@
           placeholder="Enter your password"
           required
         />
-        <button type="button" class="password-toggle" (click)="togglePasswordVisibility()">
-          <i [class]="passwordVisible ? 'fa fa-eye-slash' : 'fa fa-eye'"></i>
-        </button>
+        <!-- Password visibility icon -->
+        <mat-icon
+          class="password-toggle"
+          (click)="togglePasswordVisibility()"
+        >
+          {{ passwordVisible ? 'visibility_off' : 'visibility' }}
+        </mat-icon>
       </div>
     </div>
 

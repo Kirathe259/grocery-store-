@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon'; // Import MatIconModule
 
 @Component({
   standalone: true,
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [FormsModule],
+  imports: [FormsModule, MatIconModule], // Import MatIconModule
 })
 export class LoginComponent {
   username: string = '';
@@ -19,7 +20,7 @@ export class LoginComponent {
   passwordRegex: RegExp =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
 
-  constructor(private router: Router) {} // Inject the Router service
+  constructor(private router: Router) {}
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;

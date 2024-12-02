@@ -21,8 +21,8 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
-  color: #1a4314;
+  font-weight: 400;
+  color: #2bb316;
 }
 
 input {
@@ -36,7 +36,7 @@ input {
 
 /* Password Wrapper Styles */
 .password-group {
-  position: relative;
+  margin-bottom: 15px;
 }
 
 .password-wrapper {
@@ -46,32 +46,26 @@ input {
 }
 
 .password-wrapper input {
-  flex: 1;
+  width: 100%;
 }
 
 .password-toggle {
+  font-size: 1.5rem;
+  color: #555;
+  cursor: pointer;
   position: absolute;
   right: 10px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0 8px;
-}
-
-.password-toggle i {
-  font-size: 1.2rem;
-  color: #555;
   transition: color 0.3s;
 }
 
-.password-toggle:hover i {
+.password-toggle:hover {
   color: #1a4314;
 }
 
 button {
   width: 100%;
   padding: 10px;
-  background-color: #1a4314;
+  background-color: #247717;
   color: white;
   font-size: 1rem;
   border: none;
@@ -81,7 +75,7 @@ button {
 }
 
 button:hover {
-  background-color: #145a10;
+  background-color: #064103;
 }
 
 /* Remember Me and Forgot Password */
