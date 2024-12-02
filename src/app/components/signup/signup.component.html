@@ -1,0 +1,88 @@
+<div class="signup-container">
+  <h2>Sign Up</h2>
+  <form (ngSubmit)="onSubmit()">
+    <!-- Full Name -->
+    <div class="form-group">
+      <label for="fullName">Full Name:</label>
+      <input
+        type="text"
+        id="fullName"
+        [(ngModel)]="fullName"
+        name="fullName"
+        placeholder="Enter your full name"
+        required
+      />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        [pattern]="emailPattern"
+      />
+    </div>
+
+    <!-- Phone Number -->
+    <div class="form-group">
+      <label for="phone">Phone Number:</label>
+      <input
+        type="text"
+        id="phone"
+        [(ngModel)]="phone"
+        name="phone"
+        placeholder="Enter your phone number"
+        required
+      />
+    </div>
+
+    <!-- Password -->
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <div class="password-wrapper">
+        <input
+          [type]="passwordVisible ? 'text' : 'password'"
+          id="password"
+          [(ngModel)]="password"
+          name="password"
+          placeholder="Enter your password"
+          required
+          [pattern]="passwordPattern"
+        />
+        <mat-icon
+          class="toggle-password"
+          (click)="togglePasswordVisibility()"
+          >{{ passwordVisible ? 'visibility_off' : 'visibility' }}</mat-icon
+        >
+      </div>
+    </div>
+
+    <!-- Confirm Password -->
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password:</label>
+      <div class="password-wrapper">
+        <input
+          [type]="confirmPasswordVisible ? 'text' : 'password'"
+          id="confirmPassword"
+          [(ngModel)]="confirmPassword"
+          name="confirmPassword"
+          placeholder="Confirm your password"
+          required
+        />
+        <mat-icon
+          class="toggle-password"
+          (click)="toggleConfirmPasswordVisibility()"
+          >{{ confirmPasswordVisible ? 'visibility_off' : 'visibility' }}</mat-icon
+        >
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit">Sign Up</button>
+  </form>
+</div>

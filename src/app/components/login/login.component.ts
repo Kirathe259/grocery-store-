@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -15,7 +16,10 @@ export class LoginComponent {
   passwordVisible: boolean = false;
 
   emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  passwordRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+  passwordRegex: RegExp =
+    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  constructor(private router: Router) {} // Inject the Router service
 
   togglePasswordVisibility() {
     this.passwordVisible = !this.passwordVisible;
@@ -45,5 +49,9 @@ export class LoginComponent {
       rememberMe: this.rememberMe,
     });
     // Add your login logic here
+  }
+
+  navigateToSignup() {
+    this.router.navigate(['/signup']);
   }
 }
