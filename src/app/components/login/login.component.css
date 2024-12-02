@@ -1,28 +1,28 @@
 .login-container {
-  max-width: 350px;
-  margin: 50px auto;
+  width: 350px;
+  margin: auto;
   padding: 20px;
-  border: 2px solid #1a4314; /* Dark-green shade */
-  border-radius: 8px;
   background-color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border: 2px solid #1a4314;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
+  text-align: center;
+  color: #1a4314;
   margin-bottom: 20px;
-  color: #1a4314; /* Dark-green text color */
 }
 
 .form-group {
-  margin-bottom: 16px;
-  text-align: left;
+  margin-bottom: 15px;
 }
 
 label {
-  font-size: 14px;
+  display: block;
+  margin-bottom: 5px;
   font-weight: bold;
-  color: #1a4314; /* Dark-green text */
+  color: #1a4314;
 }
 
 input {
@@ -31,39 +31,111 @@ input {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: black; /* Ensure text is visible */
   box-sizing: border-box;
 }
 
-input:focus {
-  border-color: #1a4314; /* Highlight border on focus */
-  outline: none;
+/* Password Wrapper Styles */
+.password-group {
+  position: relative;
+}
+
+.password-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.password-wrapper input {
+  flex: 1;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px;
+}
+
+.password-toggle i {
+  font-size: 1.2rem;
+  color: #555;
+  transition: color 0.3s;
+}
+
+.password-toggle:hover i {
+  color: #1a4314;
 }
 
 button {
   width: 100%;
   padding: 10px;
-  font-size: 1rem;
+  background-color: #1a4314;
   color: white;
-  background-color: #1a4314; /* Dark-green background for the button */
+  font-size: 1rem;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 button:hover {
-  background-color: #145a10; /* Slightly darker green on hover */
+  background-color: #145a10;
+}
+
+/* Remember Me and Forgot Password */
+.remember {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: row;
+}
+
+.remember input {
+  margin: 0;
+}
+
+.remember label {
+  margin-left: 8px;
+  font-size: 0.9rem;
+  color: #1a4314;
 }
 
 .forgot-password {
-  display: block;
-  margin-top: 10px;
-  color: #1976d2;
+  font-size: 0.9rem;
+  color: #1a4314;
+  text-decoration: underline;
   cursor: pointer;
-  text-decoration: none;
+  margin-left: auto;
 }
 
 .forgot-password:hover {
-  text-decoration: underline;
+  color: #145a10;
 }
 
+/* Sign-Up Link */
+.signup-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-link p {
+  font-size: 0.9rem;
+  color: #1a4314;
+}
+
+.signup-link a {
+  color: #3498db;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}

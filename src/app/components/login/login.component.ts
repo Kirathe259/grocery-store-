@@ -11,6 +11,15 @@ import { FormsModule } from '@angular/forms';
 export class LoginComponent {
   username: string = '';
   password: string = '';
+  rememberMe: boolean = false;
+  passwordVisible: boolean = false;
+
+  emailRegex: RegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  passwordRegex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+  togglePasswordVisibility() {
+    this.passwordVisible = !this.passwordVisible;
+  }
 
   onSubmit() {
     if (!this.username || !this.password) {
@@ -18,7 +27,23 @@ export class LoginComponent {
       return;
     }
 
+    if (!this.emailRegex.test(this.username)) {
+      alert('Please enter a valid email address');
+      return;
+    }
+
+    if (!this.passwordRegex.test(this.password)) {
+      alert(
+        'Password must be at least 8 characters long and include uppercase, lowercase, a number, and a special character.'
+      );
+      return;
+    }
+
+    console.log('Login details:', {
+      username: this.username,
+      password: this.password,
+      rememberMe: this.rememberMe,
+    });
     // Add your login logic here
-    console.log('Logging in with:', { username: this.username, password: this.password });
   }
 }
